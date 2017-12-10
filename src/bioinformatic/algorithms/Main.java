@@ -16,5 +16,7 @@ public class Main {
         FileReader seq3 = new FileReader("similarity_matrix");
         seq3.readFile();
         System.out.println(seq3.getContent());
+        SimilarityMatrix similarityMatrix = new SimilarityMatrix();
+        similarityMatrix.createMatrix(seq3.getContent());
     }
 }
