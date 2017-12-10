@@ -11,12 +11,17 @@ public class Main {
         FileReader seq2 = new FileReader("Sequence2");
         seq2.readFile();
         System.out.println(seq2.getContent());
-        Sequence sequence2 = new Sequence(seq1.getContent());
+        Sequence sequence2 = new Sequence(seq2.getContent());
 
         FileReader seq3 = new FileReader("similarity_matrix");
         seq3.readFile();
         System.out.println(seq3.getContent());
         SimilarityMatrix similarityMatrix = new SimilarityMatrix();
         similarityMatrix.createMatrix(seq3.getContent());
+
+        Fmatrix fmatrix = new Fmatrix(sequence1, sequence2, similarityMatrix);
+        fmatrix.compute();
+        System.out.println(fmatrix.toString());
+
     }
 }

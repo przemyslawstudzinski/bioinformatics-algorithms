@@ -1,18 +1,16 @@
 package bioinformatic.algorithms;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collector;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Sequence {
 
+    private String content;
     List<Character> values;
 
     public Sequence(String content) {
+       this.content = content;
         this.values = new ArrayList<>();
         values = content
                 .chars()
@@ -20,4 +18,19 @@ public class Sequence {
                 .collect(Collectors.toList());
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public List<Character> getValues() {
+        return values;
+    }
+
+    public void setValues(List<Character> values) {
+        this.values = values;
+    }
 }
