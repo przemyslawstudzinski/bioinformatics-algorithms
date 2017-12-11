@@ -22,7 +22,7 @@ public class SimilarityMatrix {
     }
 
     public void createMatrix(String content) {
-        String[] lines = content.split(System.getProperty("line.separator"));
+        String[] lines = content.split("\n");
         int i = 0;
         for (Character DnaNucleotide : DnaNucleotides) {
             String[] values = lines[i].split("\\s+");
