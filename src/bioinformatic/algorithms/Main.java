@@ -23,5 +23,15 @@ public class Main {
         fmatrix.compute();
         System.out.println(fmatrix.toString());
 
+        System.out.println("GLOBAL ALIGNMENT - NEEDLEMAN-WUNSCH");
+        NeedlemanWunsch needlemanWunsch = new NeedlemanWunsch(sequence1, sequence2, fmatrix, similarityMatrix);
+        needlemanWunsch.compute();
+        needlemanWunsch.calculateScore();
+
+        System.out.println(needlemanWunsch.getAlignmentA());
+        System.out.println(needlemanWunsch.getAlignmentB());
+        System.out.println(needlemanWunsch.getScore());
+
+
     }
 }

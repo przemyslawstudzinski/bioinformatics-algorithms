@@ -36,10 +36,9 @@ public class Fmatrix {
                 int match = matrix[i - 1][j - 1] + similarityMatrix.getMatrix().get(seq1).get(seq2);
                 int delete = matrix[i - 1][j] + gapPenalty;
                 int insert = matrix[i][j - 1] + gapPenalty;
-                matrix[i][j] = Math.max(Math.max(delete, insert),match);
+                matrix[i][j] = Math.max(Math.max(delete, insert), match);
             }
         }
-
     }
 
     public int[][] getMatrix() {
