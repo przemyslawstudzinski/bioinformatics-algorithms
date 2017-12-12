@@ -8,25 +8,32 @@ public class NeedlemanWunsch extends Algorithm {
 
     @Override
     public void compute() {
-        while (this.i > 0 || this.j > 0) {
+        while (i > 0 && j > 0) {
             char seqA = sequence1.values.get(i - 1);
             char seqB = sequence2.values.get(j - 1);
-
             int similarityValue = similarityMatrix.getMatrix().get(seqA).get(seqB);
-            if (this.i > 0 && this.j > 0 && (fmatrix[i][j] == fmatrix[i - 1][j - 1] + similarityValue)) {
+
+            int diag = fmatrix[i - 1][j - 1];
+            int up = fmatrix[i - 1][j];
+            int left = fmatrix[i][j - 1];
+
+            if (diag + similarityValue >= up && diag + similarityValue >= left ) {
                 alignmentA = seqA + alignmentA;
                 alignmentB = seqB + alignmentB;
-                i  = i - 1;
-                j  = j - 1;
-            } else if (i > 0 && fmatrix[i][j] == (fmatrix[i - 1][j] + Fmatrix.gapPenalty)) {
+                i--;
+                j--;
+            }
+            else if (up > left) {
                 alignmentA = seqA + alignmentA;
                 alignmentB = "-" + alignmentB;
-                i = i - 1;
-            } else {
+                i--;
+            }
+            else if (left > up) {
                 alignmentA = "-" + alignmentA;
                 alignmentB = seqB + alignmentB;
-                j = j - 1;
+                j--;
             }
+
         }
     }
 

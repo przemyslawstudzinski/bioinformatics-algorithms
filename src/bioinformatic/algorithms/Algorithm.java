@@ -29,13 +29,15 @@ public abstract class Algorithm {
     public abstract void compute();
 
     public void calculateScore() {
-        for (int i = 0; i < alignmentA.length(); i++)
-        {
+        for (int i = 0; i < alignmentA.length(); i++) {
             char A = alignmentA.charAt(i);
             char B = alignmentB.charAt(i);
 
-            if (A == B)
-            {
+            if (A == B) { // if a == b add 1 (from similarity matrix)
+                score += similarityMatrix.getMatrix().get(A).get(B);
+            } else if (A == '-' || B == '-') { // if gap add -1
+                score += Fmatrix.gapPenalty;
+            } else { // if a != b add -1 (from similarity matrix)
                 score += similarityMatrix.getMatrix().get(A).get(B);
             }
         }
