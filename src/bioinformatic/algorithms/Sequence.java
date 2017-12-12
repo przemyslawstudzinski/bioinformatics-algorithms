@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Sequence {
 
     private String content;
-    List<Character> values;
+    private List<Character> values;
 
     public Sequence(String content) {
        this.content = content;
@@ -22,15 +22,7 @@ public class Sequence {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public List<Character> getValues() {
         return values;
-    }
-
-    public void setValues(List<Character> values) {
-        this.values = values;
     }
 }

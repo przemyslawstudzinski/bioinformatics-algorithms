@@ -56,40 +56,4 @@ public class SimilarityMatrix {
     public Map<Character, Map<Character, Integer>> getMatrix() {
         return matrix;
     }
-
-    public void setMatrix(Map<Character, Map<Character, Integer>> matrix) {
-        this.matrix = matrix;
-    }
-
-    public Map<Character, Integer> getMatrixA() {
-        return matrixA;
-    }
-
-    public void setMatrixA(Map<Character, Integer> matrixA) {
-        this.matrixA = matrixA;
-    }
-
-    public Map<Character, Integer> getMatrixG() {
-        return matrixG;
-    }
-
-    public void setMatrixG(Map<Character, Integer> matrixG) {
-        this.matrixG = matrixG;
-    }
-
-    public Map<Character, Integer> getMatrixC() {
-        return matrixC;
-    }
-
-    public void setMatrixC(Map<Character, Integer> matrixC) {
-        this.matrixC = matrixC;
-    }
-
-    public Map<Character, Integer> getMatrixT() {
-        return matrixT;
-    }
-
-    public void setMatrixT(Map<Character, Integer> matrixT) {
-        this.matrixT = matrixT;
-    }
 }
